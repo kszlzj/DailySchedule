@@ -1,7 +1,7 @@
 # DailySchedule
 OS Tutorial Summer of Code 2020 by 罗子健
 ---
-## 七月四日
+## 7月4日
 阅读了rust权威指南《The Rust programming Language》 第十章---泛型、trait于生命周期。
-完成rustlings上*variable* *primitive_types* *function* *if* *test1*章节
+完成rustlings上[*variable*](https://github.com/kszlzj/DailySchedule/tree/master/step0/variables) [*primitive_types*](https://github.com/kszlzj/DailySchedule/tree/master/step0/primitive_types) [*function*](https://github.com/kszlzj/DailySchedule/tree/master/step0/functions) [*if*](https://github.com/kszlzj/DailySchedule/tree/master/step0/if) [*test1*](https://github.com/kszlzj/DailySchedule/blob/master/step0/test1.rs)章节
 ---
