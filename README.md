@@ -6,5 +6,7 @@ OS Tutorial Summer of Code 2020 by 罗子健
 完成rustlings上[*variable*](https://github.com/kszlzj/DailySchedule/tree/master/step0/variables) [*primitive_types*](https://github.com/kszlzj/DailySchedule/tree/master/step0/primitive_types) [*function*](https://github.com/kszlzj/DailySchedule/tree/master/step0/functions) [*if*](https://github.com/kszlzj/DailySchedule/tree/master/step0/if) [*test1*](https://github.com/kszlzj/DailySchedule/blob/master/step0/test1.rs)章节
 ---
 ## 7月5日
-将进度推进到了error1.rs，预计明天可以做完rustlings,进入risc-five的学习中来
+将进度推进到了error1.rs
 ---
+## 7月6日
+rustlings做到conversion的from_into.rs
