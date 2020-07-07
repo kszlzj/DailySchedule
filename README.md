@@ -2,6 +2,8 @@
 OS Tutorial Summer of Code 2020 by 罗子健
 ---
 ## 7月4日
+由于之间对deno(一个typescript运行时)项目感兴趣，抽了一些时间学习rust基础语法，所以没有从一开始的语法内容开始学习。
+
 阅读了rust权威指南《The Rust programming Language》 第十章---泛型、trait于生命周期。
 完成rustlings上[variable](https://github.com/kszlzj/DailySchedule/tree/master/step0/variables) [primitive_types](https://github.com/kszlzj/DailySchedule/tree/master/step0/primitive_types) [function](https://github.com/kszlzj/DailySchedule/tree/master/step0/functions) [if](https://github.com/kszlzj/DailySchedule/tree/master/step0/if) [test1](https://github.com/kszlzj/DailySchedule/blob/master/step0/test1.rs)章节
 ---
@@ -64,5 +66,62 @@ fn main(){
     let add_one_v2=|x:u32|->u32{x+1};
     let add_one_v3=|x|{x+1};
     let add_one_v3=|x| x+1;
+```
+注意：
+
+闭包回味每个参数和返回值推导一个具体的类型，但是不能推导两次
+
+例如以下的代码就是错误的:
+
+```
+    let example closure = |x| x;
+    let s= example_closire(String::from("hello"));
+    let n= example_closure(5);
+```
+
+捕捉环境中的变量
+```
+let i=1;
+let exe=|x|x+i;
+let r = exe(5);
+println!("r={}",r);
+```
+
+下面使用闭包实现一个缓存，只处理第一次传入的值并保存
+
+```
+struct Cacher<T>
+    where T: Fn(u32) -> u32
+    {
+        calculation:T,
+        value:Option<u32>,
+    }
+
+
+impl <T> Cacher<T>
+    where T:Fn(u32)->u32{
+        fn new(calculation:T)->Cacher<T>{
+            Cacher{
+                calculation,
+                value:None,
+            }
+        }
+        fn value(&mut self,arg:u32)->u32{
+            match self.value{
+                Some(v)=>v,
+                None=>{
+                    let v = (self.calculation)(arg);
+                    self.value = Some(v);
+                    v
+                }
+            }
+        }
+    }
+
+fn main(){
+    let mut c=Cacher::new(|x| x+1);
+    let v1 = c.value(1);
+    println!("v1={}",v1);
+}
 ```
 ---
