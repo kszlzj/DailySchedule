@@ -4,7 +4,9 @@ OS Tutorial Summer of Code 2020 by 罗子健
 ## 7月4日
 由于之间对deno(一个typescript运行时)项目感兴趣，抽了一些时间学习rust基础语法，所以没有从一开始的语法内容开始学习。
 
-阅读了rust权威指南《The Rust programming Language》 第十章---泛型、trait于生命周期。
+P.S.我把学习中的代码示例放入了repo中step0/rust_learn文件夹。
+
+
 完成rustlings上[variable](https://github.com/kszlzj/DailySchedule/tree/master/step0/variables) [primitive_types](https://github.com/kszlzj/DailySchedule/tree/master/step0/primitive_types) [function](https://github.com/kszlzj/DailySchedule/tree/master/step0/functions) [if](https://github.com/kszlzj/DailySchedule/tree/master/step0/if) [test1](https://github.com/kszlzj/DailySchedule/blob/master/step0/test1.rs)章节
 ---
 ## 7月5日
@@ -16,9 +18,13 @@ rustlings做到conversion的from_into.rs
 ## 7月7日
 由于对生命周期的理解不够深入，今天我抽时间观看令狐壹冲Rust编程视频教程（进阶）中关于生命周期的讲解。
 从生命周期的省略开始看，明白了生命周期省略的三条规则 ：
+
 *1、每个引用的参数都有它自己的生命周期参数。*
+
 *2、如果只有一个输入生命周期参数，那么它被赋予所有输出生命周期参数。*
+
 *3、如果方法有多个输入生命周期参数，不过其中之一因为方法的缘故为&self或者&mut self，那么self的生命周期被赋予所有输出生命周期参数。*
+
 静态生命周期：'static 其生命周期存活于整个程序期间，所有的字符字面量都拥有static生命周期。
 `let s:&'static str ="hello";`
 示例：
@@ -122,6 +128,23 @@ fn main(){
     let mut c=Cacher::new(|x| x+1);
     let v1 = c.value(1);
     println!("v1={}",v1);
+}
+```
+
+闭包可以通过三种方式捕获参数的方式，分别是获得所有权、可变借用、不可变借用。这三种捕获值的方式被编码为如下三个Fn trait:
+*(1)FnOne消费从环境作用域捕获的变量*
+
+*(2)FnMut获取可变借用值，所以可以改变其环境。*
+
+*(3)Fn从环境不可变的借用值*
+
+示例：
+```
+fn main(){
+let x= vec![1,2,3];
+let equal_to_x=move |z| z==x;
+let y= vec![1,2,3];
+assert!(equal_to_x(y))
 }
 ```
 ---
