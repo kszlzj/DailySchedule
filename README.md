@@ -4,7 +4,7 @@ OS Tutorial Summer of Code 2020 by 罗子健
 ## 7月4日
 由于之间对deno(一个typescript运行时)项目感兴趣，抽了一些时间学习rust基础语法，所以没有从一开始的语法内容开始学习。
 
-P.S.我把学习中的代码示例放入了repo中step0/rust_learn文件夹。
+***P.S.我把学习中的代码示例放入了repo中step0/rust_learn文件夹。***
 
 
 完成rustlings上[variable](https://github.com/kszlzj/DailySchedule/tree/master/step0/variables) [primitive_types](https://github.com/kszlzj/DailySchedule/tree/master/step0/primitive_types) [function](https://github.com/kszlzj/DailySchedule/tree/master/step0/functions) [if](https://github.com/kszlzj/DailySchedule/tree/master/step0/if) [test1](https://github.com/kszlzj/DailySchedule/blob/master/step0/test1.rs)章节
@@ -148,3 +148,23 @@ assert!(equal_to_x(y))
 }
 ```
 ---
+## 7月8日
+
+在做rustlings的习题的时候发现我对智能指针的理解还不够深入，于是我又看了看了一下令狐壹冲关于智能指针的讲解。
+
+智能指针是一类数据结构，他们表现类似于指针，但是也拥有额外的元数据，最明显的，他们拥有一个引用计数。引用计数记录智能指针总共有多少个所有者，并且当且没有任何所有者时清除数据。
+
+普通引用和智能指针的一个区别是：应用知识借用数据指针，而智能指针则是拥有指向的数据。
+
+智能指针实现了Deref和Drop trait
+
+几个标准库中的智能指针
+*Box<T>,用于堆上分配；*
+
+*Rc<T>,一个引用类型，其数据有多个所有者*
+
+*Ref<T>和RefMut<T>,通过RefCell<T访问>，一个在运行时而不再编译时执行借用规则的类型*
+
+实现Deref trait允许我们重载解引用运算符。
+
+另外添加了leetcode上面的一题，并用C++解答，明天用rust实现
