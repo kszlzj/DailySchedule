@@ -1,0 +1,11 @@
+/Users/apple/DailySchedule/step2/lab0/os/target/rls/debug/deps/proc_macro2-cd4b547ee84fe0d2.rmeta: /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/lib.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/parse.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/detection.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/fallback.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/wrapper.rs
+
+/Users/apple/DailySchedule/step2/lab0/os/target/rls/debug/deps/libproc_macro2-cd4b547ee84fe0d2.rlib: /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/lib.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/parse.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/detection.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/fallback.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/wrapper.rs
+
+/Users/apple/DailySchedule/step2/lab0/os/target/rls/debug/deps/proc_macro2-cd4b547ee84fe0d2.d: /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/lib.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/parse.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/detection.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/fallback.rs /Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/wrapper.rs
+
+/Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/lib.rs:
+/Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/parse.rs:
+/Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/detection.rs:
+/Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/fallback.rs:
+/Users/apple/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/proc-macro2-1.0.18/src/wrapper.rs:
