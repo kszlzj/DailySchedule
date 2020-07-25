@@ -1,64 +1,52 @@
-//! 定义地址类型和地址常量
-//!
-//! 我们为虚拟地址和物理地址分别设立两种类型，利用编译器检查来防止混淆。
-
 use super::config::{KERNEL_MAP_OFFSET, PAGE_SIZE};
 use bit_field::BitField;
 
-/// 虚拟地址
 #[repr(C)]
 #[derive(Copy, Clone, Debug, Default, Eq, PartialEq, Ord, PartialOrd, Hash)]
 pub struct VirtualAddress(pub usize);
 
-/// 物理地址
 #[repr(C)]
 #[derive(Copy, Clone, Debug, Default, Eq, PartialEq, Ord, PartialOrd, Hash)]
 pub struct PhysicalAddress(pub usize);
 
-/// 虚拟页号
 #[repr(C)]
 #[derive(Copy, Clone, Debug, Default, Eq, PartialEq, Ord, PartialOrd, Hash)]
 pub struct VirtualPageNumber(pub usize);
 
-/// 物理页号
 #[repr(C)]
 #[derive(Copy, Clone, Debug, Default, Eq, PartialEq, Ord, PartialOrd, Hash)]
 pub struct PhysicalPageNumber(pub usize);
 
-// 以下是一大堆类型的相互转换、各种琐碎操作
-
-/// 从指针转换为虚拟地址
 impl<T> From<*const T> for VirtualAddress {
     fn from(pointer: *const T) -> Self {
         Self(pointer as usize)
     }
 }
-/// 从指针转换为虚拟地址
+
 impl<T> From<*mut T> for VirtualAddress {
     fn from(pointer: *mut T) -> Self {
         Self(pointer as usize)
     }
 }
 
-/// 虚实页号之间的线性映射
 impl From<PhysicalPageNumber> for VirtualPageNumber {
     fn from(ppn: PhysicalPageNumber) -> Self {
         Self(ppn.0 + KERNEL_MAP_OFFSET / PAGE_SIZE)
     }
 }
-/// 虚实页号之间的线性映射
+
 impl From<VirtualPageNumber> for PhysicalPageNumber {
     fn from(vpn: VirtualPageNumber) -> Self {
         Self(vpn.0 - KERNEL_MAP_OFFSET / PAGE_SIZE)
     }
 }
-/// 虚实地址之间的线性映射
+
 impl From<PhysicalAddress> for VirtualAddress {
     fn from(pa: PhysicalAddress) -> Self {
         Self(pa.0 + KERNEL_MAP_OFFSET)
     }
 }
-/// 虚实地址之间的线性映射
+
 impl From<VirtualAddress> for PhysicalAddress {
     fn from(va: VirtualAddress) -> Self {
         Self(va.0 - KERNEL_MAP_OFFSET)
